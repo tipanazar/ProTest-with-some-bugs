@@ -1,0 +1,19 @@
+.social {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin-right: 10px;
+    fill: #555555;
+}
+
+.item:hover,
+.item:focus {
+    fill: #FF6B09;
+}

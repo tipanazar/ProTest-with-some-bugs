@@ -1,0 +1,68 @@
+@import "../../sass/main.scss";
+
+.section {
+padding-top: 42px;
+padding-bottom: 114px;
+
+    @include mq(tablet) {
+        padding-bottom: 116px;
+}
+}
+
+.tittle {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 0 32px 34px 32px;
+    
+    &::after {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        width: 130px;
+        height: 1px;
+        background-color: rgba(0, 18, 47, 0.15);
+        top: 14px;
+        transform: translateY(-50%);
+        position: relative;
+    }
+    
+    @include mq(tablet) {
+        line-height: 1.5;
+        padding: 0 20px 60px 20px;
+        &::after {
+            width: 322px;
+            top: 20px;
+        }  
+    }
+    
+    @include mq(desktop) {
+        padding: 0px 335px 60px 335px;
+    }
+    
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(1, 280px);
+    grid-row-gap: 20px;
+    flex-wrap: wrap;
+    transition: 0.45s;
+    justify-content: center;
+    object-fit: cover;
+    width: auto;
+      
+        @include mq(tablet) {
+            grid-template-columns: repeat(2, 336px);
+            grid-row-gap: 30px;
+            grid-gap: 40px;
+        
+        }
+        
+        @include mq(desktop) {
+            grid-template-columns: repeat(3, 280px);
+            grid-row-gap: 30px;
+            grid-gap: 40px;
+        }
+}

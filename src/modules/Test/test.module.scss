@@ -1,0 +1,148 @@
+@import '../../sass/main.scss';
+.test {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 55px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: 'Montserrat Medium';
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    @include mq(tablet) {
+      font-size: 22px;
+    }
+    @include mq(desktop) {
+      font-weight: 500;
+    }
+    &_btn {
+      min-height: 35px;
+      min-width: 130px;
+      font-size: 10px;
+      padding: 17px 14px;
+      color: #fff;
+      background-color: #ff6b09;
+      border-width:0;
+      @include mq(tablet) {
+        font-size: 14px;
+        min-width: 180px;
+      }
+      transition: all 200ms ease;
+      &:hover{
+        box-shadow: 0px 4px 15px rgba(255, 107, 9, 0.445);
+      }
+    }
+  }
+  &_curent {
+    color: #ff6b09;
+  }
+  &_question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    min-height: 450px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
+    &_title {
+      margin-bottom: 10px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 1.2;
+      text-align: center;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      @include mq(tablet) {
+        font-size: 14px;
+      }
+    }
+  }
+  &_navigate {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &_btn {   
+      &_prev, &_next {
+        padding: 0px 10px;
+        min-height: 35px;
+      width: 55px;
+      font-family: 'Montserrat Medium';
+        font-size: 12px;
+        line-height: 1.1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        letter-spacing: 0.02em;
+        border-width:0;
+      @include mq(tablet) {
+        min-width: 210px;        
+      }      
+      }   
+      &_prev {        
+        color: #fff;
+        background-color: #ff6b09;
+        &::before {
+          content: '←';
+          font-size: 26px;
+        }
+        &::after{
+          display: none;
+          content:'Previous question';
+          @include mq(tablet) {
+            display: block;
+          }        
+        }
+        transition: all 200ms ease;
+      &:hover{
+        box-shadow: 0px 4px 15px rgba(255, 107, 9, 0.445);
+      }
+      &:active {        
+        transform: translateX(-4px);
+      }
+      }
+      &_next {   
+        background-color: #fff;     
+      &::before{
+        display: none;
+        content:'Next question';
+        @include mq(tablet) {
+          display: block;
+        }        
+      }
+      &::after{
+        content: '→';
+        font-size: 26px;
+      }
+      transition: all 200ms ease;
+      &:hover{
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      &:active {        
+        transform: translateX(4px);
+      }
+      }
+    }
+  }
+  width: 90vw;
+  max-width: 320px;
+  padding: 20px;
+  margin: 0 auto;
+
+  @include mq(tablet) {
+    max-width: 768px;
+    padding: 20px 32px;
+  }
+  @include mq(desktop) {
+    max-width: 1024px;
+    padding: 20px 16px;
+  }
+}
