@@ -1,0 +1,91 @@
+@import '../../../sass/main.scss';
+.btn {
+  min-height: 50px;
+  min-width: 160px;
+  background-color: #ff6b09;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  &_title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 25px;
+    @include mq(tablet) {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+
+    &::after {
+      position: relative;
+      display: block;
+      content: ' ';
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 2px;
+      opacity: 0.15;
+      background-color: #00122f;
+    }
+    &_size {
+      &_small {
+        font-size: 10px;
+        line-height: 1.2;
+        @include mq(tablet) {
+          font-size: 16px;
+          line-height: 1.4;
+        }
+      }
+      &_medium {
+        font-size: 12px;
+        line-height: 1.5;
+        @include mq(tablet) {
+          font-size: 20px;
+          line-height: 1.4;
+        }
+      }
+      &_large {
+        font-size: 12px;
+        line-height: 1.5;
+        @include mq(tablet) {
+          font-size: 22px;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  &_form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    font-family: 'Montserrat Medium';
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #000000;
+    &_label {
+      cursor: pointer;
+      // font-family: 'Montserrat Medium';
+      font-size: 10px;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+      @include mq(tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.answers_form_radio {
+  cursor: pointer;
+}

@@ -1,0 +1,111 @@
+@import '../../sass/main.scss';
+
+%vertLine {
+  position: absolute;
+  display: block;
+  content: ' ';
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+footer {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 10px 0;
+  background-color: var(--footer-color);
+
+  @include mq(tablet) {
+    font-size: 12px;
+    line-height: 1.25;
+    padding: 19px 0;
+  }
+}
+
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.footerText {
+  margin: 0 8px;
+  &::before {
+    @extend %vertLine;
+    top: 1px;
+    width: 1px;
+    height: 13.5px;
+    left: 19.7%;
+  }
+  &::after {
+    @extend %vertLine;
+    top: 1px;
+    width: 1px;
+    height: 13.5px;
+    left: 59%;
+  }
+  @include mq(tablet) {
+    margin: 0 19px;
+    &::before {
+      left: 26.4%;
+    }
+    &::after {
+      left: 46.7%;
+    }
+  }
+  @include mq(desktop) {
+    margin: 0 16px;
+    &::before {
+      left: 33.6%;
+    }
+    &::after {
+      left: 47.6%;
+    }
+  }
+}
+
+.copyrightIcon {
+  margin-right: 5.5px;
+  fill: rgba(255, 255, 255, 0.4);
+  @include mq(tablet) {
+    margin-right: 6.5px;
+  }
+  @include mq(desktop) {
+    margin-right: 9.5px;
+  }
+}
+
+.heartIcon {
+  margin-left: 4px;
+  @include mq(tablet) {
+    margin: 0 7px;
+  }
+  @include mq(desktop) {
+    margin: 0 8px;
+  }
+}
+
+.footerLink {
+  &::after {
+    @extend %vertLine;
+    left: 39.5%;
+    width: 75px;
+    height: 0.5px;
+  }
+
+  @include mq(tablet) {
+    &::after {
+      left: 69.15%;
+      width: 91px;
+    }
+  }
+  @include mq(desktop) {
+    &::after {
+      left: 63.6%;
+    }
+  }
+}

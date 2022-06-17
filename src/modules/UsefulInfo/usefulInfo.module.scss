@@ -1,0 +1,146 @@
+@import '../../sass/main.scss';
+
+%afterRules {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: #00122f;
+}
+
+.mainBlock {
+  background-image: url(../../images/useful-info/useful-info-320px.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  @include mq(retina) {
+    background-image: url(../../images/useful-info/useful-info-320px@2x.png);
+  }
+
+  @include mq(tablet) {
+    background-image: url(../../images/useful-info/useful-info-768px.png);
+
+    @include mq(retina) {
+      background-image: url(../../images/useful-info/useful-info-768px2x.png);
+    }
+  }
+  @include mq(desktop) {
+    background-image: url(../../images/useful-info/useful-info.png);
+
+    @include mq(retina) {
+      background-image: url(../../images/useful-info/useful-info@2x.png);
+    }
+  }
+}
+
+.infoBlock {
+  margin-top: 42px;
+  @include mq(tablet) {
+    margin-top: 182px;
+  }
+  @include mq(desktop) {
+    margin-top: 102px;
+  }
+}
+
+.litList {
+  margin-bottom: 32px;
+  padding-left: 12px;
+  @include mq(tablet) {
+    padding-left: 100px;
+  }
+  @include mq(desktop) {
+    padding-left: 80px;
+  }
+}
+.litItem {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.6;
+  max-width: 207px;
+  letter-spacing: 0.02em;
+
+  @include mq(tablet) {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.57;
+  }
+}
+
+.resList {
+  padding-left: 12px;
+  @include mq(tablet) {
+    padding-left: 100px;
+    margin-bottom: 336px;
+  }
+  @include mq(desktop) {
+    margin-bottom: 272px;
+  }
+  @include mq(desktop) {
+    padding-left: 80px;
+  }
+}
+
+.resItem {
+  position: relative;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  max-width: 207px;
+  width: max-content;
+  &::after {
+    @extend %afterRules;
+    top: 12px;
+    width: 100%;
+    height: 1px;
+    opacity: 0.7;
+  }
+
+  @include mq(tablet) {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.57;
+    &::after {
+      @extend %afterRules;
+      top: 17px;
+      width: 100%;
+      height: 1px;
+      opacity: 0.7;
+    }
+  }
+}
+
+.title {
+  position: relative;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+
+  &::after {
+    @extend %afterRules;
+    top: 54px;
+    width: 150px;
+    opacity: 0.15;
+    border: 0.5px solid #00122f;
+  }
+
+  @include mq(mobile-only) {
+    max-width: 130px;
+  }
+
+  @include mq(tablet) {
+    font-size: 22px;
+    line-height: 1.36;
+    letter-spacing: 0.02em;
+    margin-bottom: 44px;
+    &::after {
+      @extend %afterRules;
+      top: 54px;
+      width: 336px;
+      opacity: 0.15;
+      border: 0.5px solid #00122f;
+    }
+  }
+}

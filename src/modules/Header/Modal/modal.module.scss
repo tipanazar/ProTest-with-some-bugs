@@ -1,0 +1,54 @@
+%navLinkRules {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 76px;
+  width: 100%;
+  border-bottom: 1px solid #e2e3e5;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.modalBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 71px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: var(--main-backgr-color);
+}
+
+.modalList {
+  width: 100%;
+}
+
+.activeLink {
+  @extend %navLinkRules;
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    border: 1px solid #ff6b09;
+    background-color: #ff6b09;
+  }
+}
+
+.inActiveLink {
+  @extend %navLinkRules;
+}
+
+.signOutLogo {
+  @extend %navLinkRules;
+  background-color: var(--main-backgr-color);
+  border: 0;
+}

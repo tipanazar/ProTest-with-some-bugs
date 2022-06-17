@@ -1,0 +1,74 @@
+@import '../../sass/main';
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.02%;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  @include mq(tablet) {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  @include mq(desktop) {
+    font-size: 34px;
+  }
+}
+
+.text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: 0.02%;
+  @include mq(tablet) {
+    font-size: 16px;
+    line-height: 2, 25;
+  }
+  @include mq(desktop) {
+    font-size: 16px;
+    line-height: 2;
+  }
+}
+
+.text_span {
+  font-weight: bold;
+}
+
+.text_wrapper {
+  margin-bottom: 30px;
+  @include mq(tablet) {
+    width: 540px;
+    margin-bottom: 40px;
+  }
+  @include mq(desktop) {
+    width: 420px;
+    margin: 0;
+  }
+}
+
+.auth_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  @include mq(tablet) {
+    padding: 70px 0;
+  }
+  @include mq(desktop) {
+    flex-direction: row;
+  }
+}
+
+.errorNotice {
+  text-align: center;
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  font-weight: 500;
+  @include mq(tablet) {
+    font-size: 24px;
+    margin: 30px 0 0 0;
+  }
+  @include mq(desktop) {
+    text-align: right;
+  }
+}

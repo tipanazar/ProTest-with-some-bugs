@@ -1,0 +1,113 @@
+@import '../../sass/main.scss';
+
+%navLinkRules {
+  position: relative;
+  display: none;
+
+  @include mq(tablet) {
+    display: inline;
+  }
+}
+
+%headerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 60px;
+  border: 0;
+  border-left: 1px solid #e2e3e5;
+  background-color: var(--main-backgr-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e3e5;
+  position: relative;
+}
+
+.headerBlock {
+  display: flex;
+  width: 100%;
+  padding: 20px 0 20px 20px;
+  align-items: center;
+
+  @include mq(tablet) {
+    justify-content: space-between;
+    padding: 20px;
+  }
+}
+
+.headerLogoLink {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  @include mq(tablet) {
+    margin-right: 0;
+  }
+}
+
+.linksList {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.linksListItem {
+  margin-right: 60px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.activeLink {
+  @extend %navLinkRules;
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80px;
+    border: 1px solid var(--first-orange-color);
+    background-color: var(--first-orange-color);
+  }
+}
+.inActiveLink {
+  @extend %navLinkRules;
+}
+
+.userProfileLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  font-size: 17px;
+  line-height: 1.33;
+  letter-spacing: 0.02em;
+  color: #555555;
+  box-shadow: 0px 1px 1px rgba(18, 29, 46, 0.1);
+}
+
+.openModalBtn {
+  @extend %headerBtn;
+
+  @include mq(tablet) {
+    display: none;
+  }
+}
+
+.logoutBtn {
+  @extend %headerBtn;
+  display: none;
+  @include mq(tablet) {
+    display: block;
+  }
+}
